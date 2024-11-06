@@ -1,5 +1,6 @@
 package converters;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.regex.Pattern;
 
@@ -10,12 +11,12 @@ public class Dec2Hex
     public static String convDec(String[] args) {
 
         if (args.length == 0) {return "Missing Argument";}
-        if(!Pattern.matches("-?\\d+", args[0])) {return "Invalid Argument";};
+        if(!Pattern.matches("-?\\d+", args[0])) {return "Invalid Argument";}
         int num = Integer.parseInt(args[0]);
         char[] ch ={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
         int rem;
         StringBuilder hexadecimal= new StringBuilder();
-        logger.info(String.format("Converting the Decimal Value %d to Hex...", num));
+        if (logger.isLoggable(Level.INFO)) {logger.info(String.format("Converting the Decimal Value %d to Hex...", num));}
 
         while(num != 0)
         {
@@ -28,6 +29,6 @@ public class Dec2Hex
     }
 
     public static void main(String[] args)    {
-        logger.info(convDec(args));
+        if (logger.isLoggable(Level.INFO)) {logger.info(convDec(args));}
     }
 }
