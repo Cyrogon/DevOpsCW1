@@ -1,13 +1,16 @@
 package converters;
 
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 
-class Dec2Hex
+public class Dec2Hex
 {
     private static final Logger logger = Logger.getLogger(Dec2Hex.class.getName());
 
     public static String convDec(String[] args) {
 
+        if (args.length == 0) {return "Missing Argument";}
+        if(!Pattern.matches("-?\\d+", args[0])) {return "Invalid Argument";};
         int num = Integer.parseInt(args[0]);
         char[] ch ={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
         int rem;
