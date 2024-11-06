@@ -1,14 +1,18 @@
 package converters;
 
+import java.util.logging.Logger;
+
 class Dec2Hex
 {
+    private static final Logger logger = Logger.getLogger(Dec2Hex.class.getName());
 
     public static String convDec(String[] args) {
+
         int num = Integer.parseInt(args[0]);
         char[] ch ={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
         int rem;
         StringBuilder hexadecimal= new StringBuilder();
-        System.out.println("Converting the Decimal Value " + num + " to Hex...");
+        logger.info("Converting the Decimal Value " + num + " to Hex...");
 
         while(num != 0)
         {
