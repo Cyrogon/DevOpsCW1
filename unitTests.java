@@ -5,8 +5,6 @@ import converters.Dec2Hex;
 
 public class unitTests {
 
-    public unitTests() {}
-
     @Test
     public void testInt() {
         assertEquals("Using an int should work","Hexadecimal representation is: C", Dec2Hex.convDec(new String[]{"12"}));
