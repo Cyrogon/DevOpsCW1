@@ -1,4 +1,4 @@
-// Comment to proc a build change again
+// Comment to proc a build change
 
 import java.util.Scanner;
 
