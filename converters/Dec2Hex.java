@@ -12,7 +12,7 @@ class Dec2Hex
         char[] ch ={'0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F'};
         int rem;
         StringBuilder hexadecimal= new StringBuilder();
-        logger.info("Converting the Decimal Value " + num + " to Hex...");
+        logger.info(String.format("Converting the Decimal Value %d to Hex...", num));
 
         while(num != 0)
         {
@@ -25,6 +25,6 @@ class Dec2Hex
     }
 
     public static void main(String[] args)    {
-        System.out.println(convDec(args));
+        logger.info(convDec(args));
     }
 }
